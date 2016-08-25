@@ -91,7 +91,7 @@
                             <th>IP</th>
                         </tr>
                         <tr ng-repeat="x in logMessagesData.data" title="{{x.message}}">
-                            <td class="clickable" ng-click="showLogMessage(x)"><a href="javascript:void">{{$index + 1}}</a></td>
+                            <td class="clickable" ng-click="showLogMessage(x)"><a href="javascript:void(0);">{{$index + 1}}</a></td>
                             <td>{{x.id}}</td>
                             <td>{{x.messageType}}</td>
                             <td>{{shortStr(x.message)}}</td>
@@ -115,6 +115,27 @@
 			    <h3 class="modal-title">Snapmd Root</h3>
 			</div>
 			<div class="modal-body">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="myColor.name">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <li ng-repeat="color in colors" class="input-lg">
+                                        <a href="#" ng-click="changeColor(color)">{{color.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form> 
+                </div>
+                <br />
+                <div>
+                    <span>&nbsp;</span>
+                </div>
 				<div>
 					<label>Api Root:</label>
 					<input ng-model="apiRoot" class="form-control input-sm" type="text">

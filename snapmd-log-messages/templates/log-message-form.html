@@ -1,0 +1,18 @@
+<div id="log-message-form">
+    <div class="modal-header">
+        <h3 class="modal-title">Log Message</h3>
+    </div>
+    <div class="modal-body">
+        <label>Message Id:</label>
+        <input type="text" size="35" readonly="readonly" ng-model="logMessage.id">
+
+        <div>
+            <p class="someTopSpace">
+                <textarea class="form-control" rows="10" ng-model="logMessageJson"></textarea>
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="close()">Cancel</button>
+    </div>
+</div>
